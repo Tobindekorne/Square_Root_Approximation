@@ -9,7 +9,7 @@ GOOD LUCK!
  *----------------------------------------------------------------------------*/
 
 __asm int my_sqrt(int x){
-	PUSH {r4,r5,r7,r8,r9} ; Push r4-r9 registers onto the stack to save their states
+	PUSH {r4,r5,r6,r7,r8,r9} ; Push r4-r9 registers onto the stack to save their states
 	; This block will initialize all variables needed for the main functionality
 	MOVS r1, #0 ; Use r1 for "done." Initializing it to 0
 	MOVS r2, #0 ; Use r2 for "a." Initializing it to 0
@@ -41,7 +41,7 @@ loop_conditions
 	
 done
 	ADDS r0, r4, #0 ; set x = c to return the result
-	POP {r4,r5,r7,r8,r9} ; Pop registers to return them to their previous values before exiting the subroutine
+	POP {r4,r5,r6,r7,r8,r9} ; Pop registers to return them to their previous values before exiting the subroutine
 	BX lr ; Return to main
 
 }
